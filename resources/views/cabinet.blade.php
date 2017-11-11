@@ -5,7 +5,7 @@
 @stop
 @section('content')
     <h3>Вітаємо, {{Auth::user()->name}}, у вашому кабінеті</h3>
-    <table class="table table-striped">
+    {{--<table class="table table-striped">
         <thead>
         <tr>
             <th>Виконані завдання</th>
@@ -14,8 +14,8 @@
         </tr>
         </thead>
         <tbody>
-        {{--*/ $HtmlCopletedCount = 0 /*--}}
-        {{--*/ $CssCopletedCount = 0 /*--}}
+        --}}{{--*/ $HtmlCopletedCount = 0 /*--}}{{--
+        --}}{{--*/ $CssCopletedCount = 0 /*--}}{{--
         @foreach ($completed as $c)
             <tr>
                 <td>{{Str::limit($c->task_text, 200)}}
@@ -27,16 +27,16 @@
                 <td>
                     @if($c->lessonType->HTML_CSS=='1')
                         <a href="{{ url('/html/') }}">HTML</a>
-                        {{--*/ $HtmlCopletedCount++/*--}}
+                        --}}{{--*/ $HtmlCopletedCount++/*--}}{{--
                     @elseif ($c->lessonType->HTML_CSS=='2')
                         <a href="{{ url('/css/') }}">CSS</a>
-                        {{--*/ $CssCopletedCount++/*--}}
+                        --}}{{--*/ $CssCopletedCount++/*--}}{{--
                     @endif
                 </td>
             </tr>
         @endforeach
         </tbody>
-    </table>
+    </table>--}}
     <div class="row">
         <div class="col-sm-6 charts" id="htmlChart"></div>
         <div class="col-sm-6 charts" id="CssChart"></div>
